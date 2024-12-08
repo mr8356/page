@@ -85,12 +85,12 @@ public class AdminInterface {
         }
     }
 
-    private void handleBookHistoryRecord(){
+    private void handleBookHistoryRecord() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println(" 연혁 열람 화면");
         System.out.println("--------------------------------------------------------------------------");
 
-        while (true){
+        while (true) {
             // 입력 받기
             System.out.print("연혁을 열람할 도서 사본 ID를 입력하세요: ");
             String inputId = scanner.nextLine();
@@ -115,7 +115,7 @@ public class AdminInterface {
             System.out.println("--------------------------------------------------------------------------");
             Book book = bookManager.getBookById(bookCopy.getBookId());
             String authors = book.getAuthors().stream()
-                    .map(Author::getName)
+                    .map(author -> author.getName() + " #" + author.getId())
                     .reduce((a, b) -> a + ", " + b)
                     .orElse("no author");
             System.out.printf("도서: %s (저자: %s)%n", book.getTitle(), authors);
@@ -158,7 +158,7 @@ public class AdminInterface {
         }
     }
 
-            //todo C 전역 반납기한 설정
+    //todo C 전역 반납기한 설정
     private void handleSetReturnDeadline() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println(" 반납 기한 설정 화면");

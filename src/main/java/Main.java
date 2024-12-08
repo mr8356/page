@@ -13,6 +13,7 @@ public class Main {
     private static final BookManager bookManager = MemoryBookManager.getInstance();
     private static LastAccessRecord lastAccessRecord = LastAccessRecord.getInstance();
     private static LocalDate tempDate;
+
     public static void main(String[] args) {
         // 데이터 로드 post 파일 로드하함
         accountManager.loadData();

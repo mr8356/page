@@ -14,7 +14,12 @@ public abstract class Account implements Serializable {
         this.password = password;
     }
 
-    public String getId() { return id; }
-    public boolean authenticate(String password) { return this.password.equals(password); }
+    public String getId() {
+        return id;
+    }
+
+    public boolean authenticate(String password) {
+        return this.password.equals(password);
+    }
 }
 

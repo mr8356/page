@@ -23,7 +23,7 @@ public interface BookManager {
     // 모든 도서 로드
 
     public BookCopy getBookCopyById(int bookCopyId);
-    
+
     public void loadData();
 
     // 모든 도서 저장

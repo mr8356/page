@@ -122,8 +122,8 @@ public class MemoryBookManager implements Serializable, BookManager {
             }
         }
 
-        for (BookCopy copy: deletedCopies){
-            if (copy.getCopyId() == bookCopyId){
+        for (BookCopy copy : deletedCopies) {
+            if (copy.getCopyId() == bookCopyId) {
                 return copy;
             }
         }
@@ -160,15 +160,15 @@ public class MemoryBookManager implements Serializable, BookManager {
                 }
             }
             // 다음 복사본 ID 설정
-            for (Book book : books.values()){
-                for (BookCopy copy : book.getCopies()){
-                    if (copy.getCopyId() >= nextCopyId){
+            for (Book book : books.values()) {
+                for (BookCopy copy : book.getCopies()) {
+                    if (copy.getCopyId() >= nextCopyId) {
                         nextCopyId = copy.getCopyId() + 1;
                     }
                 }
             }
-            for (BookCopy copy : deletedCopies){
-                if (copy.getCopyId() >= nextCopyId){
+            for (BookCopy copy : deletedCopies) {
+                if (copy.getCopyId() >= nextCopyId) {
                     nextCopyId = copy.getCopyId() + 1;
                 }
             }
@@ -218,6 +218,7 @@ public class MemoryBookManager implements Serializable, BookManager {
     public void addReturnRecord(ReturnRecord record) {
         returnRecords.add(record);
     }
+
     public static int getNextCopyId() {
         return nextCopyId++;
     }

@@ -274,7 +274,7 @@ public class UserInterface {
                 System.out.println("--------------------------------------------------------------------------");
                 Book book = bookManager.getBookById(bookCopy.getBookId());
                 String authors = book.getAuthors().stream()
-                        .map(Author::getName)
+                        .map(author -> author.getName() + " #" + author.getId())
                         .reduce((a, b) -> a + ", " + b)
                         .orElse("no author");
                 System.out.printf("도서: %s (저자: %s)%n", book.getTitle(), authors);
